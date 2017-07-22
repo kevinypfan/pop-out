@@ -15,7 +15,9 @@
                 </ul>
             </div>
         </div>
-        <app-menu v-if="menu" :menu="menu" @closeMenu="closeMenu"></app-menu>
+        <transition name="fade">
+            <app-menu v-if="menu" :menu="menu" @closeMenu="closeMenu"></app-menu>
+        </transition>
     </nav>
 </template>
 <script>
@@ -36,6 +38,11 @@
         }
     }
 </script>
-<style>
-
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .8s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
 </style>

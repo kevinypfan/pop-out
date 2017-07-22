@@ -14,7 +14,6 @@
 </template>
 <script>
     export default{
-        props: ['menu'],
         methods:{
             closeMenu(){
                 this.$emit('closeMenu',false)
@@ -22,7 +21,8 @@
         }
     }
 </script>
-<style>
+<style scoped>
+
 .menu-title {
   position: absolute;
   top: 0px;
